@@ -1,28 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
+  <link rel="stylesheet" href="normalize.css">
+  <link rel="stylesheet" href="styles.css">
   <title>Frontend Mentor | Browser extensions manager UI</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
-<body>
 
-  Extensions List
+<body>
+  <!-- Logo & Them mode -->
+  <header>
+    <img src="assets/images/logo-white.svg" alt="Logo">
+    <img src="assets/images/icon-sun.svg" alt="Change Them to dark/light mode" id="colorSchema">
+  </header>
+
+  <!-- Header of extentions -->
+  <main>
+    <div class="selectFilter">
+      <h1>Extensions List</h1>
+      <div class="filters">
+        <button class="filterBtn selected" id="all">
+          All
+        </button>
+        <button class="filterBtn" id="active">
+          Active
+        </button>
+        <button class="filterBtn" id="inactive">
+          Inactive
+        </button>
+      </div>
+    </div>
+
+    <!-- Extentions -->
+    <div class="cards">
+      <div class="card">
+        <div class="header_icon">
+          <div class="header_details">
+            <h3>DevLens</h3>
+            <p>Quickly inspect page layouts and visualize element boundaries.</p>
+          </div>
+          <img src="assets/images/logo-devlens.svg" alt="DevLens Icon">
+        </div>
+        <div class="buttons filterBtn">
+          <button>Remove</button>
+          <label class="switch">
+            <input type="checkbox" id="toggle-switch">
+            <span class="slider round"></span>
+          </label>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="header_icon">
+          <div class="header_details">
+            <h3>DevLens</h3>
+            <p>Quickly inspect page layouts and visualize element boundaries.</p>
+          </div>
+          <img src="assets/images/logo-devlens.svg" alt="DevLens Icon">
+        </div>
+        <div class="buttons">
+          <button>Remove</button>
+          <label class="switch">
+            <input type="checkbox" id="toggle-switch">
+            <span class="slider round"></span>
+          </label>
+        </div>
+      </div>
+      <div class="card">
+        <div class="header_icon">
+          <div class="header_details">
+            <h3>DevLens</h3>
+            <p>Quickly inspect page layouts and visualize element boundaries.</p>
+          </div>
+          <img src="assets/images/logo-devlens.svg" alt="DevLens Icon">
+        </div>
+        <div class="buttons">
+          <button>Remove</button>
+          <label class="switch">
+            <input type="checkbox" id="toggle-switch">
+            <span class="slider round"></span>
+          </label>
+        </div>
+      </div>
+
+    </div>
+  </main>
+  <!-- Extensions List
 
   All
   Active
   Inactive
 
-  <!-- If you plan to use the JSON file to populate the data dynamically, you can delete the content below -->
+   If you plan to use the JSON file to populate the data dynamically, you can delete the content below 
 
   DevLens
   Quickly inspect page layouts and visualize element boundaries.
@@ -70,11 +147,13 @@
 
   ConsolePlus
   Enhanced developer console with advanced filtering and logging.
-  Remove
+  Remove 
 
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
-  </div>
+  </div> -->
 </body>
+<script src="main.js"></script>
+
 </html>

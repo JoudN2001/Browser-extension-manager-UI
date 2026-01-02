@@ -21,25 +21,21 @@
     --Dark-Gradient: linear-gradient(180deg, #040918 0%, #091540 100%);
 }
 
-@font-face {
-    font-family: "Noto Sans";
-    src: url("assets/fonts/NotoSans-VariableFont_wdth\,wght.ttf"), format("truetype");
-    font-weight: 100 900;
-}
-
 ::after,
 ::before,
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-size: 16px;
     font-family: "Noto Sans", sans-serif;
+    font-optical-sizing: auto;
 }
 
 body {
     width: 100vw;
     height: 100%;
-    background: var(--Dark-Gradient);
+    background: var(--Light-Gradient);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -49,7 +45,7 @@ body {
 header {
     display: flex;
     justify-content: space-between;
-    background-color: var(--N800);
+    background-color: var(--Neutral);
     width: 90%;
     margin: 30px auto;
     padding: 10px;
@@ -63,14 +59,14 @@ header img:nth-of-type(1) {
 header img:nth-of-type(2) {
     padding: 10px;
     border-radius: 10px;
-    background-color: var(--N700);
+    background-color: var(--N100);
 }
 
 /* main Title style */
 main .selectFilter h1 {
     margin-top: 5px;
     margin-bottom: 15px;
-    color: var(--Neutral);
+    color: var(--N900);
     text-align: center;
 }
 
@@ -91,17 +87,17 @@ button {
     padding: 10px 18px;
     border: none;
     border-radius: 20px;
-    border: 1px solid var(--N600);
-    background-color: var(--N700);
-    color: var(--N100);
+    border: 1px solid var(--N200);
+    background-color: var(--Neutral);
+    color: var(--N900);
     font-weight: 400;
 }
 
 .selectFilter .filters .selected {
     border: none;
     font-weight: 500;
-    background-color: var(--R400);
-    color: var(--N900);
+    background-color: var(--R700);
+    color: var(--Neutral);
 }
 
 /* Cards style */
@@ -112,31 +108,30 @@ button {
 }
 
 .card {
-    background-color: var(--N700);
-
+    background-color: var(--Neutral);
     padding: 15px;
     margin: 5px 20px;
     border-radius: 15px;
-    border: 1px solid var(--N600);
+    border: 1px solid var(--N100);
+    box-shadow: 0px 0px 1px var(--N300);
 }
 
 .header_icon {
     display: flex;
     flex-direction: row-reverse;
-    justify-content: start;
     align-items: start;
     gap: 15px;
 }
 
 .header_details h3 {
-    color: var(--Neutral);
+    color: var(--N900);
     font-size: 1.25rem;
     margin-top: 3px;
     margin-bottom: 10px;
 }
 
 .header_details p {
-    color: var(--N300);
+    color: var(--N600);
     font-size: 15px;
     margin-bottom: 15px;
     font-weight: 400;
@@ -149,7 +144,7 @@ button {
 }
 
 .buttons button {
-    background-color: var(--N800);
+    background-color: var(--Neutral);
 }
 
 /* toggle switch style */
@@ -163,7 +158,7 @@ button {
 }
 
 .toggle {
-    background-color: var(--N600);
+    background-color: var(--N300);
     width: 40px;
     height: 20px;
     border-radius: 10px;
@@ -186,7 +181,7 @@ button {
 
 /* next element of checked input */
 .switch:checked+.toggle {
-    background-color: var(--R500);
+    background-color: var(--R700);
 }
 
 .switch:checked+.toggle::before {

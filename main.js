@@ -75,48 +75,57 @@ filterBtn.forEach((button) => {
 });
 
 // color schema light/dark mode
+let mySheet;
+window.addEventListener("load", () => {
+  const sheets = Array.from(document.styleSheets);
+  mySheet = sheets.find(
+    (sheet) => sheet.href && sheet.href.includes("styles.css")
+  );
+});
 themBtn.addEventListener("click", (e) => {
   if (!isLightMode) {
     themLogo.src = "assets/images/logo.svg";
     themBtn.src = "assets/images/icon-moon.svg";
     isLightMode = true;
+    mySheet.rules[3].style.background = "var(--Light-Gradient)";
+    mySheet.rules[4].style.backgroundColor = "var(--Neutral)";
+    mySheet.rules[6].style.backgroundColor = "var(--N100)";
+    mySheet.rules[7].style.color = "var(--N900)";
+    mySheet.rules[10].style.border = "var(--N200)";
+    mySheet.rules[10].style.backgroundColor = "var(--Neutral)";
+    mySheet.rules[10].style.color = "var(--N900)";
+    mySheet.rules[11].style.backgroundColor = "var(--R700)";
+    mySheet.rules[11].style.color = "var(--Neutral)";
+    mySheet.rules[13].style.backgroundColor = "var(--Neutral)";
+    mySheet.rules[13].style.border = "1px solid var(--N100)";
+    mySheet.rules[13].style.borderShadow = "0px 0px 1px var(--N300)";
+    mySheet.rules[15].style.color = "var(--N900)";
+    mySheet.rules[16].style.color = "var(--N600)";
+    mySheet.rules[18].style.backgroundColor = "var(--Neutral)";
+    mySheet.rules[21].style.backgroundColor = "var(--N300)";
+    mySheet.rules[22].style.backgroundColor = "var(--Neutral)";
+    mySheet.rules[23].style.backgroundColor = "var(--R700)";
   } else {
     themLogo.src = "assets/images/logo-white.svg";
     themBtn.src = "assets/images/icon-sun.svg";
     isLightMode = false;
-  }
-});
-
-// document.styleSheets[3].rules[3];
-// document.styleSheets[3].rules[5];
-// document.styleSheets[3].rules[6];
-// document.styleSheets[3].rules[9];
-// document.styleSheets[3].rules[10];
-// document.styleSheets[3].rules[12];
-// document.styleSheets[3].rules[14];
-// document.styleSheets[3].rules[15];
-// document.styleSheets[3].rules[20];
-// document.styleSheets[3].rules[21];
-// document.styleSheets[3].rules[22];
-
-window.addEventListener("load", () => {
-  // 1. Get all sheets
-  const sheets = Array.from(document.styleSheets);
-
-  // 2. Find the one specifically named "styles.css"
-  const mySheet = sheets.find(
-    (sheet) => sheet.href && sheet.href.includes("styles.css")
-  );
-
-  if (mySheet) {
-    console.log("SUCCESS! Found your file:", mySheet);
-    console.log("Total Rules:", mySheet.rules.length); // Should show 25+
-
-    // Now you can safely access your rules
-    console.log(mySheet.rules[3]);
-  } else {
-    console.error(
-      "Could not find styles.css. Check if the file name matches exactly."
-    );
+    mySheet.rules[3].style.background = "var(--Dark-Gradient)";
+    mySheet.rules[4].style.backgroundColor = "var(--N800)";
+    mySheet.rules[6].style.backgroundColor = "var(--N700)";
+    mySheet.rules[7].style.color = "var(--Neutral)";
+    mySheet.rules[10].style.border = "var(--N600)";
+    mySheet.rules[10].style.backgroundColor = "var(--N700)";
+    mySheet.rules[10].style.color = "var(--N100)";
+    mySheet.rules[11].style.backgroundColor = "var(--R400)";
+    mySheet.rules[11].style.color = "var(--N900)";
+    mySheet.rules[13].style.backgroundColor = "var(--N700)";
+    mySheet.rules[13].style.border = "1px solid var(--N600)";
+    mySheet.rules[13].style.borderShadow = "0px 0px 1px var(--N900)";
+    mySheet.rules[15].style.color = "var(--Neutral)";
+    mySheet.rules[16].style.color = "var(--N300)";
+    mySheet.rules[18].style.backgroundColor = "var(--N800)";
+    mySheet.rules[21].style.backgroundColor = "var(--N600)";
+    mySheet.rules[22].style.backgroundColor = "var(--Neutral)";
+    mySheet.rules[23].style.backgroundColor = "var(--R500)";
   }
 });

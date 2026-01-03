@@ -64,12 +64,21 @@ This project was a great opportunity to practice DOM manipulation and state mana
 
 One major learning point was implementing the **Dark/Light mode toggle**. I learned how to swap icons and update CSS variables (or classes) on the root element to instantly switch themes.
 
+Note: I chose to change the theme colors by directly accessing and editing the CSS stylesheet object in JavaScript, rather than the standard approach of toggling a class (like .dark-mode). This method allowed me to modify the entire color schema at the source, rather than just overriding specific properties, providing a deeper understanding of how to manipulate CSS rules programmatically.
 ```
 // Example of how I handled the theme toggle
-const themeToggle \= document.getElementById('colorSchema');
-themeToggle.addEventListener('click', () \=\> {
-  document.body.classList.toggle('dark-mode');
-  // Logic to switch the sun/moon icon source
+themBtn.addEventListener("click", (e) => {
+  if (!isLightMode) {
+    themLogo.src = "assets/images/logo.svg";
+    themBtn.src = "assets/images/icon-moon.svg";
+    isLightMode = true;
+    // Enter to styleSheet and edit it
+  } else {
+    themLogo.src = "assets/images/logo-white.svg";
+    themBtn.src = "assets/images/icon-sun.svg";
+    isLightMode = false;
+    // Enter to styleSheet and back to orginal
+  }
 });
 ```
 
